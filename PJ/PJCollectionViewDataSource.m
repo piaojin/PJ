@@ -93,11 +93,16 @@
     
     UICollectionViewCell *cell = (UICollectionViewCell *) [collectionView dequeueReusableCellWithReuseIdentifier:identifier forIndexPath:indexPath];
     if (cell == nil) {
-        cell = [[cellClass alloc] init];
+        cell = [[cellClass alloc] initWithReuseIdentifier:identifier];
     }
     
     if ([cell isKindOfClass:[PJCollectionViewCell class]]) {
-        [(PJCollectionViewCell *) cell setObject:object];
+        PJCollectionViewCell *pjCollectionViewCell = (PJCollectionViewCell *) cell;
+        if(_controller){
+            pjCollectionViewCell.controller = _controller;
+            pjCollectionViewCell.delegate = _controller;
+        }
+        [pjCollectionViewCell setObject:object];
     }
     
     [cell setNeedsLayout];

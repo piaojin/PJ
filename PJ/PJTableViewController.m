@@ -8,7 +8,6 @@
 
 #import "PJTableViewController.h"
 #import "PJBaseTableViewDataSource.h"
-#import "PJBaseTableViewCell.h"
 #import "ArrayDataSource.h"
 
 @interface PJTableViewController ()
@@ -250,6 +249,7 @@
 }
 
 - (void)setForbidLoadMore:(BOOL)forbidLoadMore{
+    [self.tableView.mj_footer setAutomaticallyHidden:forbidLoadMore];
     [self.tableView.mj_footer setHidden:forbidLoadMore];
     _forbidLoadMore = forbidLoadMore;
 }

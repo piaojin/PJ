@@ -7,7 +7,12 @@
 
 #import <UIKit/UIKit.h>
 #import "PJBaseButton.h"
+#import "PJBaseViewController.h"
+@protocol PJCollectionViewCellDelegate <NSObject>
 
+- (void)action:(id)sender withObject:(id)object;
+
+@end
 @class PJCollectionViewModel;
 
 @interface PJCollectionViewCell : UICollectionViewCell{
@@ -15,6 +20,9 @@
     PJBaseButton *_coverBtn;
     PJCollectionViewModel *_object;
 }
+
+@property (weak, nonatomic)PJBaseViewController *controller;
+@property (weak, nonatomic)id<PJCollectionViewCellDelegate> delegate;
 
 - (id)object;
 

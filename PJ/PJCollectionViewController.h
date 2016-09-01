@@ -6,8 +6,9 @@
 
 #import "PJBaseModelViewController.h"
 #import "PJCollectionViewDataSource.h"
+#import "PJCollectionViewCell.h"
 
-@interface PJCollectionViewController : PJBaseModelViewController<UICollectionViewDelegate>
+@interface PJCollectionViewController : PJBaseModelViewController<UICollectionViewDelegate,PJCollectionViewCellDelegate>
 
 //UICollectionViewDelegateFlowLayout
 @property(nonatomic, strong) id <PJCollectionViewDataSource> dataSource;

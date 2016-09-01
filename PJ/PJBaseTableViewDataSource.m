@@ -124,7 +124,12 @@
     }
     
     if ([cell isKindOfClass:[PJBaseTableViewCell class]]) {
-        [(PJBaseTableViewCell *) cell setModel:object];
+        PJBaseTableViewCell *pjBaseTableViewCell = (PJBaseTableViewCell *) cell;
+        if(_controller){
+            pjBaseTableViewCell.controller = _controller;
+            pjBaseTableViewCell.delegate = _controller;
+        }
+        [pjBaseTableViewCell setModel:object];
     }
     
     // 目前没有用到

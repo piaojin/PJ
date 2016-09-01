@@ -9,8 +9,9 @@
 #import "PJBaseModelViewController.h"
 #import "PJBaseTableViewDataSource.h"
 #import "MJRefresh.h"
+#import "PJBaseTableViewCell.h"
 
-@interface PJTableViewController : PJBaseModelViewController<UITableViewDelegate>
+@interface PJTableViewController : PJBaseModelViewController<UITableViewDelegate,PJBaseTableViewCellDelegate>
 
 @property(nonatomic, strong) id <PJBaseTableViewDataSource> dataSource;
 @property(nonatomic, strong) UITableView *tableView;

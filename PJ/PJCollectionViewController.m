@@ -5,7 +5,6 @@
 //
 
 #import "PJCollectionViewController.h"
-#import "PJCollectionViewCell.h"
 #import "PJCollectionViewHeaderView.h"
 #import "PJCollectionViewFooterView.h"
 #import "PJCollectionViewLayout.h"

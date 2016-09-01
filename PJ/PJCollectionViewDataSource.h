@@ -7,6 +7,7 @@
 
 #import <Foundation/Foundation.h>
 #import "PJCollectionViewLayout.h"
+#import "PJBaseViewController.h"
 
 @class PJCollectionViewHeaderView;
 @class PJCollectionViewFooterView;
@@ -29,6 +30,7 @@
 
 @property(nonatomic, strong) NSMutableArray *items;
 @property(nonatomic, strong) NSMutableArray *mutiItems;
+@property (weak, nonatomic)PJBaseViewController *controller;
 
 
 + (PJCollectionViewDataSource *)dataSourceWithItems:(NSMutableArray *)items;

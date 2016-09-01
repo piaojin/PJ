@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
+#import "PJBaseViewController.h"
 
 @protocol PJBaseTableViewDataSource <UITableViewDataSource>
 
@@ -25,6 +26,7 @@
 
 @property(nonatomic, strong) NSMutableArray *items;
 @property(nonatomic, strong) NSMutableArray *sectionsItems;
+@property (weak, nonatomic)PJBaseViewController *controller;
 
 
 /**
